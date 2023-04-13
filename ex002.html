@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tratamento de dados </title>
+</head>
+<style>
+    *{
+        padding: 0%; margin: 0%;
+        box-sizing: border-box;
+    }
+    body{
+        background-image: linear-gradient(to bottom, lightgray, lightblue);
+        background-repeat: no-repeat;
+        width: 100vw;
+        height: 100vh;
+    }
+    main{
+        width: 80vw;
+        background-color: rgba(0, 0, 0, 0.219);
+        position: relative;
+        margin-left: 10vw;
+        padding: 20px;
+    }
+    h1{
+        text-align: center;
+    }
+    p{
+        font: normal small-caps 22px cursive;
+    }
+    li{
+        font-size: 20px;
+       margin-left: 30px;
+       list-style-type: disc;
+    }
+
+</style>
+<body>
+    <main>
+        <h1>primeiros passos javaScript</h1>
+        <h2>tratamento de dados</h2>
+        <p>conversão de  string para number, 3 opções </p>
+        <ol>
+            <li>Number.parseInt</li>
+            <li>Number.parseFloat</li>
+            <li>Number</li>
+        </ol>
+        <p>converão de number para string, 2 opções</p>
+        <ol>
+            <li>String</li>
+            <li>toString</li>
+        </ol>
+        <p>uma outra coisa importante é ao invés de utilizar concatenação <br>
+        utilizar o templatestring com ${} e tudo dentro de crase ``</p>
+        <p>exemplo:</p>
+            <code>
+                window.alert('a soma dos valores é '+ s) <br>
+                window.alert(`a soma dos valores é ${s}`)
+            </code>
+        
+    </main>
+    <script>
+       var nome = window.prompt('Qual o seu nome?') //janela que perguntara o nome 
+       window.alert('é um prazer te conhecer ' + nome + '!')// alerta de msg de bem vindo
+       document.write(`seu nome tem ${nome.length} letras`)
+       var n1 = Number.parseFloat(window.prompt('digite um numero')) //necessário fazer uma conversão de nurmber e string  
+       var n2 = Number.parseFloat(window.prompt('digite um segundo numero'))
+       var s = n1 + n2 
+       window.alert(`a soma dos valores é ${s}`)
+    </script>
+</body>
+</html>
