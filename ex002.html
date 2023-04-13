@@ -42,16 +42,20 @@
         <h1>primeiros passos javaScript</h1>
         <h2>tratamento de dados</h2>
         <p>conversão de  string para number, 3 opções </p>
-        <ol>
-            <li>Number.parseInt</li>
-            <li>Number.parseFloat</li>
-            <li>Number</li>
-        </ol>
+        <code>
+            <ol>
+                <li>Number.parseInt(var)</li>
+                <li>Number.parseFloat(var)</li>
+                <li>Number(var)</li>
+            </ol>
+        </code>
         <p>converão de number para string, 2 opções</p>
-        <ol>
-            <li>String</li>
-            <li>toString</li>
-        </ol>
+        <code>
+            <ol>
+                <li>String(var)</li>
+                <li>var.toString()</li>
+            </ol>
+        </code>
         <p>uma outra coisa importante é ao invés de utilizar concatenação <br>
         utilizar o templatestring com ${} e tudo dentro de crase ``</p>
         <p>exemplo:</p>
@@ -59,12 +63,16 @@
                 window.alert('a soma dos valores é '+ s) <br>
                 window.alert(`a soma dos valores é ${s}`)
             </code>
+            <p>outros comandos básicos tbm são:</p>
+            <code>var.length (vai dizer quantos caracteres tem uma string)<br> var.toUpperCase (transforma a string em maiúsculas )<br> var.toLowerCase(transforma a string em minúsculas)</code>
         
     </main>
     <script>
        var nome = window.prompt('Qual o seu nome?') //janela que perguntara o nome 
-       window.alert('é um prazer te conhecer ' + nome + '!')// alerta de msg de bem vindo
-       document.write(`seu nome tem ${nome.length} letras`)
+       var sobrenome = window.prompt('digite seu sobrenome')
+       window.alert(`é um prazer te conhecer  ${nome}  ${sobrenome}!`)// alerta de msg de bem vindo
+       document.writeln(`seu nome tem ${nome.length} letras`)
+       document.writeln(`${nome.toUpperCase()}`)
        var n1 = Number.parseFloat(window.prompt('digite um numero')) //necessário fazer uma conversão de nurmber e string  
        var n2 = Number.parseFloat(window.prompt('digite um segundo numero'))
        var s = n1 + n2 
