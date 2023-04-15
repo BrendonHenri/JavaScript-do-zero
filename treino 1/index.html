@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora do Dia</title>
+    <style>
+        *{
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+        }
+        body{
+            max-width: 100vw;
+            max-height: 100vh;
+        }
+         h1{
+           color: white;
+           position: absolute;
+           font: normal bold 2.2em helvetica;
+           text-shadow: 0px 0px 6px black;
+           left: 50%;
+           top: 10%;
+           transform: translate(-50%, -50%);
+         }
+        main{
+            text-align: center;
+            font: normal bold 1.3em arial;
+            height: 100vh;
+            width: 100vw;   
+            position: relative;
+            z-index: 1;
+            overflow: hidden;      
+        }
+        #content{
+            z-index: 2;
+            
+        }
+        #backvideo{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        #card{
+            width: 700px;
+            height: 400px;
+            background-color: white;
+            border: 2px solid rgba(0, 0, 0, 0.333);
+            box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.47);
+            border-radius: 26px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font: italic bold 1em cursive;
+           
+        }
+        input{
+            margin: 40px auto;
+        }
+        button{
+            width: 150px;
+            display: block;
+            margin: 60px auto;
+            height: 40px;
+            border-radius: 16px;
+            font: normal bold 1em cursive;
+        }
+        button:hover{
+            cursor: pointer;
+            background-color: black;
+            color: white;
+            transition-duration: .8s;
+        }
+        #image{
+            width: 250px;
+            height: 250px;
+            background: black url(imagens/manha.jpg) no-repeat center center;
+            background-size: cover;
+            position: absolute;
+            border-radius: 50%;         
+            left: 50%;
+            top: 60%;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <main id="main">
+        
+        <video id="backvideo" autoplay muted loop >
+        <source src="imagens/video.mp4" type="video/mp4">
+         </video>
+        <div id="content">
+            <h1>Hora do Dia</h1>
+            <div id="card">
+                <h2 id="qhora">inicie a aplicação</h2>
+                <form action="form.php" id="formu">
+                    <label for="isexom">Homen</label>
+                    <input type="radio" name="sexo" id="isexom" value="homen">
+                    <label for="isexof">mulher</label>
+                    <input type="radio" name="sexo" id="isexof" value="mulher">
+                </form>
+                <button onclick="iniciar()">iniciar</button>
+                <div id="image">
+            
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function iniciar(){
+            var hora = new Date()
+            var agora = hora.getHours()
+            var sexo = document.querySelector('input[name="sexo"]:checked').value
+            var selec = document.getElementById('formu')
+            var header = document.getElementById('qhora')
+            var fundo = document.getElementById('image')
+            var main = document.getElementById ('main')
+            var card = document.getElementById ('card')
+            var agora = 18
+            if ( agora < 12 && sexo === 'mulher'){
+                qhora.innerHTML = `now is ${agora} hours <br> GOOD MORNING GIRL!!! `
+                fundo.style.display = 'block'
+                fundo.style.backgroundImage = "url('imagens/mulher-manha.jpg')"
+                selec.style.display = 'none'
+                card.style.background = 'linear-gradient(-45deg, #F6C84A, #E385EB)'
+                
+            }
+            else if ( agora < 12 && sexo === 'homen'){
+                qhora.innerHTML = `now is ${agora} hours <br> GOOD MORNING MAN!!!`
+                fundo.style.display = 'block'
+                fundo.style.backgroundImage = "url('imagens/homen-manha.jpg')"
+                selec.style.display = 'none'
+                card.style.background = 'linear-gradient(-45deg, #F6C84A, #94DCEA)'
+            }
+            else if ( agora < 19 && sexo === 'mulher') {
+                qhora.innerHTML = `now is ${agora} hours <br> GOOD AFTERNOON GIRL!!!`
+                fundo.style.backgroundImage = "url('imagens/mulher-tarde.jpg')"
+                fundo.style.display = 'block'
+                selec.style.display = 'none'
+                card.style.background = 'linear-gradient(-45deg, #E385EB, #EAAF5D)'
+                
+            }
+            else if ( agora < 19 && sexo === 'homen'){
+                qhora.innerHTML = `now is ${agora} hours <br> GOOD AFTERNOON MAN!!!`
+                fundo.style.display = 'block'
+                fundo.style.backgroundImage = "url('imagens/homen-tarde.jpg')"
+                selec.style.display = 'none'
+                card.style.background = 'linear-gradient(-45deg, #F6C84A, #94DCEA)'
+            }
+            else if (agora >19 && agora <= 24){
+                qhora.innerHTML = `now is ${agora} hours <br> GOOD EVENING!!!`
+                fundo.style.backgroundImage = "url('imagens/noite.jpg')"
+                fundo.style.display = 'block'
+               
+            }
+        }
+
+    </script>
+</body>
+</html>
