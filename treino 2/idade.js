@@ -21,7 +21,7 @@ function iniciar() {
         })
         botao.style.display = 'none'
         let foto;
-        if (idade < 18) { foto = 'imagens/menino.jpg' }
+        if (idade < 18) { foto = 'imagens/menino1.jpg' }
         else if (idade < 50) { foto = 'imagens/homen-joven.jpg' }
         else { foto = 'imagens/senhor.jpg' }
         pessoa.style.backgroundImage = `url("${foto}")`;
@@ -34,7 +34,7 @@ function iniciar() {
             resposta.style.opacity = "1";
         }, 100);
     }
-    else  (sexo === 'fem');{
+    else  {
         inputs.forEach(function (input) {
             input.style.display = 'none'
         });
@@ -46,7 +46,7 @@ function iniciar() {
         else if (idade < 50) { foto = 'imagens/mulher-joven.jpg' }
         else { foto = 'imagens/senhora.jpg' }
         pessoa.style.backgroundImage = `url("${foto}")`
-        resposta.innerHTML = `Você tem ${idade} anos e é um uma mulher.`
+        resposta.innerHTML = `Você tem ${idade} anos e é uma mulher.`
         resposta.style.fontSize = "2em";
         card.appendChild(resposta)
         resposta.style.opacity = "0";
