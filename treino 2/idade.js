@@ -23,5 +23,16 @@ function iniciar(){
         resposta.innerHTML= `Você tem ${idade} anos e é um um homen.`
         resposta.style.fontSize = "2em";
         card.appendChild(resposta)
+        pessoa.style.opacity = "0";
+        pessoa.style.transition = "opacity 0.8s ease-in-out";
+        setTimeout(function(){
+        pessoa.style.opacity = "1";
+         }   ,600);
+         resposta.style.opacity = "0";
+        resposta.style.transition = "opacity 0.8s ease-in-out";
+        setTimeout(function(){
+        resposta.style.opacity = "1";
+        }   ,100);
+        
     }
 }
