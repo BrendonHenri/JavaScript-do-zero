@@ -2,7 +2,6 @@ function iniciar(){
 let inicio = parseInt(document.getElementById('icont').value );
 let fim = parseInt(document.getElementById ('ifim'). value);
 let passo = parseInt(document.getElementById ('ipasso').value);
-
 const card = document.getElementById ('card');
     for (let i = inicio; i <= fim; i += passo) {
         let contagem = document.createElement ('p')
