@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="idade.js"></script>
+    
+    <title>Deste de Idade</title>
+</head>
+<body>
+    <header>
+        <h1>verificador de idade</h1>
+    </header>
+    <section>
+        
+        <div id="card">
+            <label for="idata" class="nasci"> Ano de Nascimento:</label>
+            <input type="date" name="data" id="idata"> <br>
+            <label for="imasc" class="sexos">Masculino</label>
+            <input type="radio" name="sexo" id="imasc" value="masc">
+            <label for="ifem" class="sexos">Feminino</label>
+            <input type="radio" name="sexo" id="ifem" value="fem">
+            <button id="btn-vai" onclick="iniciar()">calcular</button>
+            <div id="image">
+
+            </div>
+        </div> 
+         <video id="backvideo" autoplay muted loop>
+            <source  src="imagens/relogio.mp4" type="video/mp4">
+        </video>
+    </section>
+    <footer>
+        <p>&copy;Brendon Oliveira</p>
+    </footer>
+    
+</body>
+</html>
